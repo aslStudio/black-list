@@ -1,11 +1,15 @@
 <template lang="pug">
-h1 HOME
+form-component
 </template>
 
 <script lang="ts">
-import { defineComponent, onMounted } from "vue"; 
+import Form from "@/widgets/Form/Form.vue";
+import { defineComponent } from "vue"; 
 
 export default defineComponent({
     name: 'Home',
+    components: {
+        'form-component': Form,
+    }
 })
 </script>
