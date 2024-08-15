@@ -1,10 +1,12 @@
 <template lang="pug">
 button(
     :class="[$style.root, $style[`view-${view}`], isDisabled && $style['is-disabled']]"
+    v-on:click="$emit('click')"
 )
     img(
         v-if="icon"
         :src="icon"
+        :class="$style.icon"
     )
     span
         slot
@@ -57,6 +59,14 @@ export default defineComponent({
 
     transition: 0.3s ease;
     transition-property: background-color, color;
+}
+
+.icon {
+    display: block;
+    width: 28px;
+    height: 28px;
+    margin-top: -5px;
+    margin-bottom: -4px;
 }
 
 .view {

@@ -3,6 +3,7 @@ input(
     :class="$style.root"
     :value="value"
     :placeholder="placeholder"
+    :disabled="isReadOnly"
     v-on:input="event => $emit('input', event.target.value)"
 )
 </template>
@@ -33,6 +34,7 @@ export default defineComponent({
     text-align: center;
     border: none;
     outline: none;
+    background-color: transparent;
 
     color: #000;
 
